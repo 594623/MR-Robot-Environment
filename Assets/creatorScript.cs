@@ -14,10 +14,13 @@ public class creatorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Check if the left mouse button is clicked
-        {
-            Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f; // Calculate the spawn position in front of the camera
-            GameObject newCube = Instantiate(cubePrefab, spawnPosition, Quaternion.identity); // Create a new instance of the cube prefab at the spawn position
-        }
+        
     }
+
+    public void SpawnCube()
+    {
+        Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
+        GameObject newCube = Instantiate(cubePrefab, spawnPosition, Quaternion.identity);
+    }
+
 }
