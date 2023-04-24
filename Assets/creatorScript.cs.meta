@@ -3,7 +3,10 @@ guid: 8230fcbc564f65140a1333f42904f1bb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cubePrefab: {fileID: 5739358638814993415, guid: a8fb3ab1f6ec3724ba32cb8377190c80, type: 3}
+  - cylinderPrefab: {fileID: 4202885937044528537, guid: c0a37dd07099a3541b13022dc7ed2729, type: 3}
+  - spherePrefab: {fileID: 5446223835746829223, guid: 1e7ba0cd10d397c4f9fbd70f93e908e6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -7,6 +7,7 @@ public class creatorScript : MonoBehaviour
     public GameObject cubePrefab; // Reference to the cube prefab to be instantiated
     public GameObject cylinderPrefab; 
     public GameObject spherePrefab; 
+    private List<GameObject> prefabList = new List<GameObject> ();
     // Start is called before the first frame update
     void Start()
     {
@@ -23,18 +24,39 @@ public class creatorScript : MonoBehaviour
     {
         Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
         GameObject newCube = Instantiate(cubePrefab, spawnPosition, Quaternion.identity);
+        prefabList.Add(newCube);
     }
 
     public void SpawnSphere()
     {
         Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
         GameObject newSphere = Instantiate(spherePrefab, spawnPosition, Quaternion.identity);
+        prefabList.Add(newSphere);
     }
 
     public void SpawnCylinder()
     {
         Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
         GameObject newCylinder = Instantiate(cylinderPrefab, spawnPosition, Quaternion.identity);
+        prefabList.Add(newCylinder);
     }
 
+    public void deleteLast()
+    {
+        if (prefabList.Count > 0)
+        {
+            GameObject lastPrefab = prefabList[prefabList.Count - 1];
+            prefabList.RemoveAt(prefabList.Count - 1);
+            Destroy(lastPrefab);
+        }
+    }
+
+    public void deleteAllShapes()
+    {
+        foreach (GameObject prefab in prefabList)
+        {
+            Destroy(prefab);
+        }
+        prefabList.Clear();
+    }
 }
