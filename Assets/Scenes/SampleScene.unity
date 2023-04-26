@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 43680857}
   - component: {fileID: 43680856}
   - component: {fileID: 43680855}
-  - component: {fileID: 43680854}
+  - component: {fileID: 43680858}
   m_Layer: 0
   m_Name: ImageTarget
   m_TagString: Untagged
@@ -583,25 +583,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &43680854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43680853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 43680856}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: robot_marker
-  mDatasetName: Vuforia/MarkerDatabase.xml
-  mCastedBehaviour: {fileID: 43680856}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &43680855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,7 +666,7 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: robot_marker
+  mTrackableName: ar_marker6
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/MarkerDatabase.xml
   mAspectRatio: 1
@@ -696,7 +677,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 43680854}
+  mPreview: {fileID: 43680858}
 --- !u!4 &43680857
 Transform:
   m_ObjectHideFlags: 0
@@ -712,6 +693,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &43680858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43680853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 43680856}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: ar_marker6
+  mDatasetName: Vuforia/MarkerDatabase.xml
+  mCastedBehaviour: {fileID: 43680856}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &50258538
 GameObject:
   m_ObjectHideFlags: 8

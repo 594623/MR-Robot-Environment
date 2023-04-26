@@ -10,7 +10,7 @@ public class RobotTeleporter : MonoBehaviour
 
     float x_offset = 0.0f;
     float y_offset = 0.0f;
-    float z_offset = -0.25f;
+    float z_offset = 0.0f;
 
     // Start is called before the first frame update
     void Start()

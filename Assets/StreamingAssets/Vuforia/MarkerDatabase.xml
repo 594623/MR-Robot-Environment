@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
-    <ImageTarget name="robot_marker" size="0.200000 0.200000" />
+    <ImageTarget name="ar_marker7" size="0.200000 0.200000" />
+    <ImageTarget name="ar_marker6" size="0.200000 0.200000" />
+    <ImageTarget name="ar_marker5" size="0.200000 0.200000" />
+    <ImageTarget name="ar_marker4" size="0.200000 0.200000" />
+    <ImageTarget name="ar_marker3" size="0.200000 0.200000" />
+    <ImageTarget name="ar_marker2" size="0.200000 0.200000" />
+    <ImageTarget name="ar_marker1" size="0.200000 0.200000" />
   </Tracking>
 </QCARConfig>
