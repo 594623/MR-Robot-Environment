@@ -8,14 +8,14 @@ public class RobotTeleporter : MonoBehaviour
     GameObject baseObject;
     bool isTracked;
 
-    float x_offset = 0.0f;
-    float y_offset = 0.0f;
-    float z_offset = 0.0f;
+    //float x_offset = 0.0f;
+    //float y_offset = 0.0f;
+    //float z_offset = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        imageTarget = GameObject.Find("ImageTarget");
+        imageTarget = GameObject.Find("ImageTargetOffset");
         baseObject = transform.GetChild(1).GetChild(3).gameObject;
         isTracked = false;
     }
@@ -41,8 +41,8 @@ public class RobotTeleporter : MonoBehaviour
 
     public void TeleportRobot(GameObject gObject)
     {
-        Vector3 pos = gObject.transform.position;
-        pos.Set(pos.x + x_offset, pos.y + y_offset, pos.z + z_offset);
-        baseObject.GetComponent<ArticulationBody>().TeleportRoot(pos, gObject.transform.rotation);
+        //Vector3 pos = gObject.transform.position;
+        //pos.Set(pos.x + x_offset, pos.y + y_offset, pos.z + z_offset);
+        baseObject.GetComponent<ArticulationBody>().TeleportRoot(gObject.transform.position, gObject.transform.rotation);
     }
 }
