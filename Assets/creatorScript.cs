@@ -5,7 +5,7 @@ using UnityEngine;
 public class creatorScript : MonoBehaviour
 {
     public GameObject cubePrefab; // Reference to the cube prefab to be instantiated
-    public GameObject cylinderPrefab; 
+    public GameObject capsulePrefab; 
     public GameObject spherePrefab; 
     private List<GameObject> prefabList = new List<GameObject> ();
     // Start is called before the first frame update
@@ -34,11 +34,11 @@ public class creatorScript : MonoBehaviour
         prefabList.Add(newSphere);
     }
 
-    public void SpawnCylinder()
+    public void SpawnCapsule()
     {
         Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
-        GameObject newCylinder = Instantiate(cylinderPrefab, spawnPosition, Quaternion.identity);
-        prefabList.Add(newCylinder);
+        GameObject newCapsule = Instantiate(capsulePrefab, spawnPosition, Quaternion.identity);
+        prefabList.Add(newCapsule);
     }
 
     public void deleteLast()
