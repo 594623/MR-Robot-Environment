@@ -905,7 +905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &79430011
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2636,8 +2636,8 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 3
   m_Mass: 1
-  m_ParentAnchorPosition: {x: 0.00000009685758, y: 0.0000002682209, z: 0.00000005960466}
-  m_ParentAnchorRotation: {x: 0, y: 0.70710707, z: 0.70710707, w: 0}
+  m_ParentAnchorPosition: {x: 0.00000008940701, y: 0.00000026077032, z: 3.0613468e-14}
+  m_ParentAnchorRotation: {x: -0.000000059604645, y: 0.70710695, z: 0.7071069, w: 0}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
@@ -3631,8 +3631,8 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 3
   m_Mass: 1.219
-  m_ParentAnchorPosition: {x: 1.7763573e-15, y: 0.13330008, z: -0.39220002}
-  m_ParentAnchorRotation: {x: 0, y: 0, z: -0.7071069, w: 0.7071069}
+  m_ParentAnchorPosition: {x: 0.00000007450582, y: 0.13330007, z: -0.39220002}
+  m_ParentAnchorRotation: {x: -0.18301274, y: 0.18301277, z: -0.68301284, w: 0.68301284}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
@@ -12039,8 +12039,8 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 3
   m_Mass: 2.275
-  m_ParentAnchorPosition: {x: -4.2351647e-22, y: 3.552714e-15, z: -0.42499995}
-  m_ParentAnchorRotation: {x: 0, y: 0, z: -0.7071069, w: 0.7071069}
+  m_ParentAnchorPosition: {x: 0.000000022351742, y: 0, z: -0.42500007}
+  m_ParentAnchorRotation: {x: -0.6123725, y: 0.6123725, z: 0.35355338, w: -0.35355344}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
@@ -22079,8 +22079,8 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 3
   m_Mass: 1.219
-  m_ParentAnchorPosition: {x: 0.09970008, y: 0.00000008940697, z: 0.000000059604645}
-  m_ParentAnchorRotation: {x: 0, y: 0, z: -1.0000002, w: 0}
+  m_ParentAnchorPosition: {x: 0.099700056, y: 0.000000059604645, z: -0.00000011269003}
+  m_ParentAnchorRotation: {x: 0, y: -0.7071069, z: -0.7071069, w: 0}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
@@ -24009,8 +24009,8 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 3
   m_Mass: 0.1879
-  m_ParentAnchorPosition: {x: -0.099600226, y: 0.00000009685755, z: 0.000000059604645}
-  m_ParentAnchorRotation: {x: -0.000000043711406, y: -0.000000043711406, z: 0, w: 1.0000004}
+  m_ParentAnchorPosition: {x: -0.09960014, y: 0, z: 0}
+  m_ParentAnchorRotation: {x: -0.000000021073426, y: -0.000000021073426, z: -0.000000059604645, w: 1.0000002}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
@@ -28900,7 +28900,7 @@ ArticulationBody:
   serializedVersion: 3
   m_Mass: 8.393
   m_ParentAnchorPosition: {x: 0, y: 0, z: 0}
-  m_ParentAnchorRotation: {x: 0, y: 0, z: -1.0000001, w: 0}
+  m_ParentAnchorRotation: {x: 0, y: 0.64278764, z: -0.76604456, w: 0}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
@@ -30864,8 +30864,8 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 3
   m_Mass: 1
-  m_ParentAnchorPosition: {x: -0.00000005960468, y: -0.00000008940702, z: 0.000000268221}
-  m_ParentAnchorRotation: {x: -0.000000029802322, y: -0.70710707, z: -0.000000059604645, w: 0.7071071}
+  m_ParentAnchorPosition: {x: -2.6054024e-14, y: 0.000000014901136, z: 0.0000003129245}
+  m_ParentAnchorRotation: {x: -0.000000059604645, y: -0.70710695, z: -0.00000008940697, w: 0.70710695}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
@@ -30929,6 +30929,10 @@ PrefabInstance:
     - target: {fileID: 7000911451081012207, guid: bd33ad2d9cbd4c44da40896e8902d00f, type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000911451081012207, guid: bd33ad2d9cbd4c44da40896e8902d00f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8456360503110286167, guid: bd33ad2d9cbd4c44da40896e8902d00f, type: 3}
       propertyPath: m_RootOrder
