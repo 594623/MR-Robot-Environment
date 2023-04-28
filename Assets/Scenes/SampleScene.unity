@@ -5885,7 +5885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acef0b79454c9b4dae3f8139bc4ba77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RosIPAddress: 192.168.136.128
+  m_RosIPAddress: 192.168.50.175
   m_RosPort: 10000
   m_ConnectOnStart: 1
   m_KeepaliveTime: 1
@@ -8153,7 +8153,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac752d75cbdcf6468a794ca210eca92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 1115029943}
+  place: {fileID: 0}
+  delete: {fileID: 0}
+  sliderHeight: {fileID: 0}
+  sliderWidth: {fileID: 0}
+  sliderLength: {fileID: 0}
+  robotHeigth: {fileID: 0}
+  robotDistanceofset: {fileID: 0}
+  tableHeigth: {fileID: 0}
+  presets: {fileID: 0}
 --- !u!114 &534694523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8166,7 +8174,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac752d75cbdcf6468a794ca210eca92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 1807927152}
+  place: {fileID: 0}
+  delete: {fileID: 0}
+  sliderHeight: {fileID: 0}
+  sliderWidth: {fileID: 0}
+  sliderLength: {fileID: 0}
+  robotHeigth: {fileID: 0}
+  robotDistanceofset: {fileID: 0}
+  tableHeigth: {fileID: 0}
+  presets: {fileID: 0}
 --- !u!4 &534694524
 Transform:
   m_ObjectHideFlags: 0
@@ -8328,6 +8344,7 @@ MonoBehaviour:
   cubePrefab: {fileID: 5739358638814993415, guid: a8fb3ab1f6ec3724ba32cb8377190c80, type: 3}
   capsulePrefab: {fileID: 4202885937044528537, guid: c0a37dd07099a3541b13022dc7ed2729, type: 3}
   spherePrefab: {fileID: 5446223835746829223, guid: 1e7ba0cd10d397c4f9fbd70f93e908e6, type: 3}
+  cylinderPrefab: {fileID: 0}
 --- !u!114 &546837677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10732,7 +10749,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 68399e4abfbec98459ba803053088369, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20547,6 +20564,7 @@ MonoBehaviour:
   cubePrefab: {fileID: 0}
   capsulePrefab: {fileID: 0}
   spherePrefab: {fileID: 0}
+  cylinderPrefab: {fileID: 0}
 --- !u!1 &1301233132
 GameObject:
   m_ObjectHideFlags: 0
