@@ -20,7 +20,6 @@ public class sliderValue : MonoBehaviour
     void Start()
     {
         // Get a reference to the PinchSlider component
-        PinchSliderObject = FindObjectOfType<PinchSlider>();
         TextMeshProObject.text = PinchSliderObject.SliderValue.ToString("F1");
         PinchSliderObject.OnValueUpdated.AddListener(OnPinchSliderValueChanged);
     }
