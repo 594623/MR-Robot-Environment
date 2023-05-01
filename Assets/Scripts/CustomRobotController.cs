@@ -232,7 +232,7 @@ public class CustomRobotController : Controller
             Debug.Log("setting position of joint " + (i + 1));
 
         }
-        */
+        
     }
     */
 }

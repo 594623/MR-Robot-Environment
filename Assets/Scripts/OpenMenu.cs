@@ -13,6 +13,7 @@ public class OpenMenu : MonoBehaviour
     public GameObject robotDistanceofset;
     public GameObject tableHeigth;
     public GameObject presets;
+    public GameObject imageTarget;
 
     public void PlaceMenu()
     {
@@ -57,5 +58,10 @@ public class OpenMenu : MonoBehaviour
     public void PresetsMenu()
     {
         presets.SetActive(!presets.activeSelf);
+    }
+
+    public void Imagetarget()
+    {
+        imageTarget.SetActive(!presets.activeSelf);
     }
 }

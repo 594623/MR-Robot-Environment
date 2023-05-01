@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Microsoft.MixedReality.Toolkit.UI;
+using System.Diagnostics;
 
 public class creatorScript : MonoBehaviour
 {
@@ -8,11 +10,21 @@ public class creatorScript : MonoBehaviour
     public GameObject capsulePrefab; 
     public GameObject spherePrefab;
     public GameObject cylinderPrefab;
+    public float spawnOffset = 0.2f;
+    public PinchSlider widthSlider;
+    public PinchSlider heightSlider;
+    public PinchSlider lengthSlider;
+
     private List<GameObject> prefabList = new List<GameObject> ();
     // Start is called before the first frame update
     void Start()
     {
-        
+        /*
+        // Add listeners to the pinch sliders' OnValueUpdated events
+        widthSlider.OnValueUpdated.AddListener(OnWidthSliderUpdated);
+        heightSlider.OnValueUpdated.AddListener(OnHeightSliderUpdated);
+        lengthSlider.OnValueUpdated.AddListener(OnLengthSliderUpdated);
+        */
     }
 
     // Update is called once per frame
@@ -67,4 +79,35 @@ public class creatorScript : MonoBehaviour
         }
         prefabList.Clear();
     }
+    /*
+    private void OnWidthSliderUpdated(SliderEventData eventData)
+    {
+        float widthScale = eventData.NewValue;
+        ScalePrefabListObjects(widthScale, 1f, 1f);
+        UnityEngine.Debug.Log(widthScale);
+    }
+
+    private void OnHeightSliderUpdated(SliderEventData eventData)
+    {
+        float heightScale = eventData.NewValue;
+        ScalePrefabListObjects(1f, heightScale, 1f);
+        UnityEngine.Debug.Log(heightScale);
+    }
+
+    private void OnLengthSliderUpdated(SliderEventData eventData)
+    {
+        float lengthScale = eventData.NewValue;
+        ScalePrefabListObjects(1f, 1f, lengthScale);
+    }
+
+    private void ScalePrefabListObjects(float widthScale, float heightScale, float lengthScale)
+    {
+        foreach (GameObject obj in prefabList)
+        {
+            Vector3 originalScale = obj.transform.localScale;
+            Vector3 newScale = new Vector3(originalScale.x * widthScale, originalScale.y * heightScale, originalScale.z * lengthScale);
+            obj.transform.localScale = newScale;
+        }
+    }
+    */
 }
