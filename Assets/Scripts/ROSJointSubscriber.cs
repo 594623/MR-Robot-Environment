@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Robotics.ROSTCPConnector;
+//using JointState = RosMessageTypes.JointState;
 
 public class ROSJointSubscriber : MonoBehaviour
 {
