@@ -8162,6 +8162,7 @@ MonoBehaviour:
   robotDistanceofset: {fileID: 0}
   tableHeigth: {fileID: 0}
   presets: {fileID: 0}
+  imageTarget: {fileID: 0}
 --- !u!114 &534694523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8183,6 +8184,7 @@ MonoBehaviour:
   robotDistanceofset: {fileID: 0}
   tableHeigth: {fileID: 0}
   presets: {fileID: 0}
+  imageTarget: {fileID: 0}
 --- !u!4 &534694524
 Transform:
   m_ObjectHideFlags: 0
@@ -8345,6 +8347,10 @@ MonoBehaviour:
   capsulePrefab: {fileID: 4202885937044528537, guid: c0a37dd07099a3541b13022dc7ed2729, type: 3}
   spherePrefab: {fileID: 5446223835746829223, guid: 1e7ba0cd10d397c4f9fbd70f93e908e6, type: 3}
   cylinderPrefab: {fileID: 0}
+  spawnOffset: 0.2
+  widthSlider: {fileID: 0}
+  heightSlider: {fileID: 0}
+  lengthSlider: {fileID: 0}
 --- !u!114 &546837677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10365,7 +10371,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707517798}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7631001c063f69d4495bca90731abab2, type: 3}
   m_Name: 
@@ -20565,6 +20571,10 @@ MonoBehaviour:
   capsulePrefab: {fileID: 0}
   spherePrefab: {fileID: 0}
   cylinderPrefab: {fileID: 0}
+  spawnOffset: 0.2
+  widthSlider: {fileID: 0}
+  heightSlider: {fileID: 0}
+  lengthSlider: {fileID: 0}
 --- !u!1 &1301233132
 GameObject:
   m_ObjectHideFlags: 0
