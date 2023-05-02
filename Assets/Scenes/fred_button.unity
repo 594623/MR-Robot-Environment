@@ -18802,6 +18802,7 @@ MonoBehaviour:
   widthSlider: {fileID: 1972696467}
   heightSlider: {fileID: 2144081458}
   lengthSlider: {fileID: 380238178}
+  deleteMode: 0
 --- !u!114 &546837677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31546,7 +31547,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Menu Three
+  m_text: Tap to delete
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6a84f857bec7e7345843ae29404c57ce, type: 2}
   m_sharedMaterial: {fileID: 21202819797275496, guid: 6a84f857bec7e7345843ae29404c57ce, type: 2}
@@ -32169,7 +32170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &927127811
 Transform:
   m_ObjectHideFlags: 0
@@ -32214,7 +32215,7 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: 20f25674b9512834f88938d45ed495d7, type: 3}
   iconQuadRenderer: {fileID: 1603685799}
   iconQuadTextureNameID: _MainTex
-  iconQuadTexture: {fileID: 2800000, guid: bb1b4a9241fba2042a81428e917afd5d, type: 3}
+  iconQuadTexture: {fileID: 2800000, guid: 0771cd1b5e4131e45afe250cd1713737, type: 3}
   defaultButtonQuadMaterial: {fileID: 2100000, guid: fa419ab56051229449e3b813df8f295f, type: 2}
   iconSet: {fileID: 11400000, guid: 8b386ef895f7c924f8c4b03d1d3ed683, type: 2}
   defaultIconSet: {fileID: 11400000, guid: 8b386ef895f7c924f8c4b03d1d3ed683, type: 2}
@@ -32368,9 +32369,9 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnToggleHandJoint
+      - m_Target: {fileID: 546837676}
+        m_TargetAssemblyTypeName: creatorScript, Assembly-CSharp
+        m_MethodName: ToggleDeleteMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47753,6 +47754,7 @@ MonoBehaviour:
   widthSlider: {fileID: 0}
   heightSlider: {fileID: 0}
   lengthSlider: {fileID: 0}
+  deleteMode: 0
 --- !u!1 &1301233132
 GameObject:
   m_ObjectHideFlags: 0
