@@ -6,16 +6,19 @@ using UnityEngine.Events;
 
 public class CollisionDetector : MonoBehaviour
 {
-    public string[] ignoredObjects;
-    public UnityEvent OnCollision;
+    [Space]
+    [Header("Collisions with these objects will be ignored")]
+    public GameObject[] ignoredObjects;
+    [Header("Event(s) when a collision is detected")]
+    public UnityEvent<Collision> OnCollision;
 
     private void OnCollisionEnter(Collision collision)
     {
         // Ignores certain Game Objects
-        if (ignoredObjects.Contains(collision.gameObject.name)) return;
+        if (ignoredObjects.Contains(collision.gameObject)) return;
         // Logs the collision to the console
         Debug.Log("Collision detected between " + gameObject.name + " and " + collision.gameObject.name);
-        OnCollision?.Invoke();
-        //
+        // Invokes event listeners
+        OnCollision?.Invoke(collision);
     }
 }

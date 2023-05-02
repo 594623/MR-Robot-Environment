@@ -3400,16 +3400,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoredObjects:
-  - base_link_inertia
-  - shoulder_link
-  - upper_arm_link
-  - forearm_link
-  - wrist_1_link
-  - wrist_2_link
-  - wrist_3_link
+  - {fileID: 1301233132}
+  - {fileID: 707517798}
+  - {fileID: 1982985708}
+  - {fileID: 841791702}
+  - {fileID: 203322348}
+  - {fileID: 1463377119}
+  - {fileID: 1635345405}
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1140464582}
+        m_TargetAssemblyTypeName: ROSCollisionPublisher, Assembly-CSharp
+        m_MethodName: onCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &204496603
 GameObject:
   m_ObjectHideFlags: 0
@@ -10487,16 +10499,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoredObjects:
-  - base_link_inertia
-  - shoulder_link
-  - upper_arm_link
-  - forearm_link
-  - wrist_1_link
-  - wrist_2_link
-  - wrist_3_link
+  - {fileID: 1301233132}
+  - {fileID: 707517798}
+  - {fileID: 1982985708}
+  - {fileID: 841791702}
+  - {fileID: 203322348}
+  - {fileID: 1463377119}
+  - {fileID: 1635345405}
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1140464582}
+        m_TargetAssemblyTypeName: ROSCollisionPublisher, Assembly-CSharp
+        m_MethodName: onCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &708142572
 GameObject:
   m_ObjectHideFlags: 0
@@ -12171,16 +12195,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoredObjects:
-  - base_link_inertia
-  - shoulder_link
-  - upper_arm_link
-  - forearm_link
-  - wrist_1_link
-  - wrist_2_link
-  - wrist_3_link
+  - {fileID: 1301233132}
+  - {fileID: 707517798}
+  - {fileID: 1982985708}
+  - {fileID: 841791702}
+  - {fileID: 203322348}
+  - {fileID: 1463377119}
+  - {fileID: 1635345405}
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1140464582}
+        m_TargetAssemblyTypeName: ROSCollisionPublisher, Assembly-CSharp
+        m_MethodName: onCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &854187324
 GameObject:
   m_ObjectHideFlags: 0
@@ -17942,7 +17978,8 @@ GameObject:
   - component: {fileID: 1140464577}
   - component: {fileID: 1140464580}
   - component: {fileID: 1140464576}
-  - component: {fileID: 1140464581}
+  - component: {fileID: 1140464583}
+  - component: {fileID: 1140464582}
   m_Layer: 0
   m_Name: ur5e_robot
   m_TagString: robot
@@ -17962,7 +17999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbd33a24a4a54649a8d393249ff21b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageTarget: {fileID: 801851257}
+  target: {fileID: 801851257}
   baseObject: {fileID: 1301233132}
 --- !u!114 &1140464577
 MonoBehaviour:
@@ -18041,7 +18078,26 @@ MonoBehaviour:
   torque: 100
   acceleration: 10
   highLightColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &1140464581
+--- !u!114 &1140464582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140464575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef853e7de99cd54c9850916f29bb3b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topicName: 
+  OnStopSignal:
+    m_PersistentCalls:
+      m_Calls: []
+  OnContinueSignal:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1140464583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18053,7 +18109,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19225545b087eed408e9c0d24ba18831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topicName: joints
   baseObject: {fileID: 1301233132}
+  manualJointValues: 1
+  jointValues:
+  - 90
+  - 90
+  - 90
+  - 90
+  - 90
+  - 90
 --- !u!1 &1145158961
 GameObject:
   m_ObjectHideFlags: 0
@@ -22857,16 +22922,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoredObjects:
-  - base_link_inertia
-  - shoulder_link
-  - upper_arm_link
-  - forearm_link
-  - wrist_1_link
-  - wrist_2_link
-  - wrist_3_link
+  - {fileID: 1301233132}
+  - {fileID: 707517798}
+  - {fileID: 1982985708}
+  - {fileID: 841791702}
+  - {fileID: 203322348}
+  - {fileID: 1463377119}
+  - {fileID: 1635345405}
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1140464582}
+        m_TargetAssemblyTypeName: ROSCollisionPublisher, Assembly-CSharp
+        m_MethodName: onCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1465741948
 GameObject:
   m_ObjectHideFlags: 0
@@ -25056,16 +25133,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoredObjects:
-  - base_link_inertia
-  - shoulder_link
-  - upper_arm_link
-  - forearm_link
-  - wrist_1_link
-  - wrist_2_link
-  - wrist_3_link
+  - {fileID: 1301233132}
+  - {fileID: 707517798}
+  - {fileID: 1982985708}
+  - {fileID: 841791702}
+  - {fileID: 203322348}
+  - {fileID: 1463377119}
+  - {fileID: 1635345405}
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1140464582}
+        m_TargetAssemblyTypeName: ROSCollisionPublisher, Assembly-CSharp
+        m_MethodName: onCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1651402014
 GameObject:
   m_ObjectHideFlags: 8
@@ -29519,16 +29608,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoredObjects:
-  - base_link_inertia
-  - shoulder_link
-  - upper_arm_link
-  - forearm_link
-  - wrist_1_link
-  - wrist_2_link
-  - wrist_3_link
+  - {fileID: 1301233132}
+  - {fileID: 707517798}
+  - {fileID: 1982985708}
+  - {fileID: 841791702}
+  - {fileID: 203322348}
+  - {fileID: 1463377119}
+  - {fileID: 1635345405}
   OnCollision:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1140464582}
+        m_TargetAssemblyTypeName: ROSCollisionPublisher, Assembly-CSharp
+        m_MethodName: onCollision
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1988645330
 GameObject:
   m_ObjectHideFlags: 0

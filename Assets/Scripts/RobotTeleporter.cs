@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RobotTeleporter : MonoBehaviour
 {
-    public GameObject imageTarget;
+    public GameObject target;
     public GameObject baseObject;
 
     private bool isTracked = false;
@@ -14,7 +14,7 @@ public class RobotTeleporter : MonoBehaviour
     {
         if (isTracked)
         {
-            TeleportRobot(imageTarget);
+            TeleportRobot(target);
         }
     }
 
