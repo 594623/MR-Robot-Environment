@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
-//using JointState = RosMessageTypes.JointState;
+using RosMessageTypes.Sensor;
 
 public class ROSJointSubscriber : MonoBehaviour
 {
@@ -12,15 +12,17 @@ public class ROSJointSubscriber : MonoBehaviour
     void Start()
     {
         baseObject = transform.GetChild(1).GetChild(3).gameObject;
-        // TODO: Subscribe to the "joints" ROS topic through the ROS Connection
-        //ROSConnection.GetOrCreateInstance().Subscribe<JointState>("joints", JointUpdate);
+        ROSConnection.GetOrCreateInstance().Subscribe<JointStateMsg>("joints", JointUpdate);
     }
 
-    void JointUpdate(/*JointState jointData*/)
+    void JointUpdate(JointStateMsg jointData)
     {
-        // TODO: Update the robot model's joint data with the real robot's joint data
         List<float> positions = new List<float>();
-        //positions.AddRange(jointData.position);
-        //baseObject.getComponent<ArticulationBody>().setDriveTargets(positions);
+        for (int i = 0; i < jointData.position.Length; i++)
+        {
+            positions.Add((float) jointData.position[i]);
+        }
+
+        baseObject.GetComponent<ArticulationBody>().SetDriveTargets(positions);
     }
 }
