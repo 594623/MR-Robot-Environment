@@ -3262,6 +3262,7 @@ GameObject:
   - component: {fileID: 203322352}
   - component: {fileID: 203322351}
   - component: {fileID: 203322350}
+  - component: {fileID: 203322354}
   m_Layer: 0
   m_Name: wrist_1_link
   m_TagString: Untagged
@@ -3386,6 +3387,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBaseLink: 0
+--- !u!114 &203322354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203322348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &204496603
 GameObject:
   m_ObjectHideFlags: 0
@@ -10325,6 +10338,7 @@ GameObject:
   - component: {fileID: 707517802}
   - component: {fileID: 707517801}
   - component: {fileID: 707517800}
+  - component: {fileID: 707517804}
   m_Layer: 0
   m_Name: shoulder_link
   m_TagString: Untagged
@@ -10449,6 +10463,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBaseLink: 0
+--- !u!114 &707517804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707517798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &708142572
 GameObject:
   m_ObjectHideFlags: 0
@@ -10730,8 +10756,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744854680}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: -0.1639}
-  m_LocalScale: {x: 0.1, y: 0.05, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.1, z: -0.1639}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 207090444}
@@ -11985,6 +12011,7 @@ GameObject:
   - component: {fileID: 841791706}
   - component: {fileID: 841791705}
   - component: {fileID: 841791704}
+  - component: {fileID: 841791708}
   m_Layer: 0
   m_Name: forearm_link
   m_TagString: Untagged
@@ -12109,6 +12136,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBaseLink: 0
+--- !u!114 &841791708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841791702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &854187324
 GameObject:
   m_ObjectHideFlags: 0
@@ -20715,7 +20754,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 1
   m_UseGravity: 0
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 1
 --- !u!114 &1301233137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22644,6 +22683,7 @@ GameObject:
   - component: {fileID: 1463377123}
   - component: {fileID: 1463377122}
   - component: {fileID: 1463377121}
+  - component: {fileID: 1463377125}
   m_Layer: 0
   m_Name: wrist_2_link
   m_TagString: Untagged
@@ -22768,6 +22808,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBaseLink: 0
+--- !u!114 &1463377125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463377119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1465741948
 GameObject:
   m_ObjectHideFlags: 0
@@ -24819,6 +24871,7 @@ GameObject:
   - component: {fileID: 1635345409}
   - component: {fileID: 1635345408}
   - component: {fileID: 1635345407}
+  - component: {fileID: 1635345411}
   m_Layer: 0
   m_Name: wrist_3_link
   m_TagString: Untagged
@@ -24943,6 +24996,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBaseLink: 0
+--- !u!114 &1635345411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635345405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1651402014
 GameObject:
   m_ObjectHideFlags: 8
@@ -29258,6 +29323,7 @@ GameObject:
   - component: {fileID: 1982985712}
   - component: {fileID: 1982985711}
   - component: {fileID: 1982985710}
+  - component: {fileID: 1982985714}
   m_Layer: 0
   m_Name: upper_arm_link
   m_TagString: Untagged
@@ -29382,6 +29448,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBaseLink: 0
+--- !u!114 &1982985714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982985708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1988645330
 GameObject:
   m_ObjectHideFlags: 0
