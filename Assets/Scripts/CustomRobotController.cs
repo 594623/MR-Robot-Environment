@@ -14,11 +14,8 @@ public class CustomRobotController : Controller
         private Color[] prevColor;
         private int previousIndex;
         private IEnumerator coroutine;
-        private bool coroutineIsRunning = false;
         private bool movingPositive = false;
         private bool movingNegative = false;
-        // TEST
-        // private int counter = 0;
 
     void Start()
     {
@@ -71,19 +68,6 @@ public class CustomRobotController : Controller
         }
 
         UpdateDirection(selectedIndex);
-
-        // TEST
-        /*
-        counter++;
-        if (counter >= 100)
-        {
-            List<float> positions = new List<float>();
-            float[] positionArr = { 20.0f, 210.0f, 59.0f, 100.0f, 90.0f, 24.0f };
-            positions.AddRange(positionArr);
-            SetJointPositions(positions);
-            counter = 0;
-        }
-        */
     }
 
     /// <summary>
@@ -216,23 +200,4 @@ public class CustomRobotController : Controller
         GUI.Label(new Rect(Screen.width / 2 - 200, 10, 400, 20), "Press I/K arrow keys to select a robot joint.", centeredStyle);
         GUI.Label(new Rect(Screen.width / 2 - 200, 30, 400, 20), "Press J/L arrow keys to move " + selectedJoint + ".", centeredStyle);
     }
-
-
-    /*
-    public void SetJointPositions(List<float> positions)
-    {
-        GameObject baseObject = transform.GetChild(1).GetChild(3).gameObject;
-        baseObject.GetComponent<ArticulationBody>().SetDriveTargets(positions);
-        Debug.Log("Setting joint positions");
-        /*
-        for (int i = 0; i < positions.Length; i++)
-        {
-            ArticulationBody current = articulationChain[i + 2];
-            current.xDrive.target = positions[i];
-            Debug.Log("setting position of joint " + (i + 1));
-
-        }
-        
-    }
-    */
 }

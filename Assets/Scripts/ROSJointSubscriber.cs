@@ -6,12 +6,11 @@ using RosMessageTypes.Sensor;
 
 public class ROSJointSubscriber : MonoBehaviour
 {
-    GameObject baseObject;
+    public GameObject baseObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        baseObject = transform.GetChild(1).GetChild(3).gameObject;
         ROSConnection.GetOrCreateInstance().Subscribe<JointStateMsg>("joints", JointUpdate);
     }
 

@@ -3399,6 +3399,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoredObjects:
+  - base_link_inertia
+  - shoulder_link
+  - upper_arm_link
+  - forearm_link
+  - wrist_1_link
+  - wrist_2_link
+  - wrist_3_link
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &204496603
 GameObject:
   m_ObjectHideFlags: 0
@@ -10475,6 +10486,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoredObjects:
+  - base_link_inertia
+  - shoulder_link
+  - upper_arm_link
+  - forearm_link
+  - wrist_1_link
+  - wrist_2_link
+  - wrist_3_link
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &708142572
 GameObject:
   m_ObjectHideFlags: 0
@@ -12148,6 +12170,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoredObjects:
+  - base_link_inertia
+  - shoulder_link
+  - upper_arm_link
+  - forearm_link
+  - wrist_1_link
+  - wrist_2_link
+  - wrist_3_link
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &854187324
 GameObject:
   m_ObjectHideFlags: 0
@@ -17929,6 +17962,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbd33a24a4a54649a8d393249ff21b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageTarget: {fileID: 801851257}
+  baseObject: {fileID: 1301233132}
 --- !u!114 &1140464577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18018,6 +18053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19225545b087eed408e9c0d24ba18831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseObject: {fileID: 1301233132}
 --- !u!1 &1145158961
 GameObject:
   m_ObjectHideFlags: 0
@@ -22820,6 +22856,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoredObjects:
+  - base_link_inertia
+  - shoulder_link
+  - upper_arm_link
+  - forearm_link
+  - wrist_1_link
+  - wrist_2_link
+  - wrist_3_link
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1465741948
 GameObject:
   m_ObjectHideFlags: 0
@@ -25008,6 +25055,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoredObjects:
+  - base_link_inertia
+  - shoulder_link
+  - upper_arm_link
+  - forearm_link
+  - wrist_1_link
+  - wrist_2_link
+  - wrist_3_link
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1651402014
 GameObject:
   m_ObjectHideFlags: 8
@@ -29460,6 +29518,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8843ea94e193a4489bf609176083cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ignoredObjects:
+  - base_link_inertia
+  - shoulder_link
+  - upper_arm_link
+  - forearm_link
+  - wrist_1_link
+  - wrist_2_link
+  - wrist_3_link
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1988645330
 GameObject:
   m_ObjectHideFlags: 0
