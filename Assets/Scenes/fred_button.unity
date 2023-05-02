@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11920,7 +11920,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Custom objects
+  m_text: Toggle gravity for objects
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6a84f857bec7e7345843ae29404c57ce, type: 2}
   m_sharedMaterial: {fileID: 21202819797275496, guid: 6a84f857bec7e7345843ae29404c57ce, type: 2}
@@ -12711,7 +12711,7 @@ MonoBehaviour:
   snapToPosition: 1
   thumbCollider: {fileID: 937799990}
   touchCollider: {fileID: 2025899354}
-  sliderValue: 0.5
+  sliderValue: 0.2
   useSliderStepDivisions: 0
   sliderStepDivisions: 1
   trackVisuals: {fileID: 341386160}
@@ -20538,7 +20538,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1298915543}
+      - m_Target: {fileID: 546837676}
         m_TargetAssemblyTypeName: creatorScript, Assembly-CSharp
         m_MethodName: deleteLast
         m_Mode: 1
@@ -34165,7 +34165,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -69597,7 +69597,7 @@ MonoBehaviour:
   snapToPosition: 1
   thumbCollider: {fileID: 731834884}
   touchCollider: {fileID: 1642736706}
-  sliderValue: 0.5
+  sliderValue: 0.2
   useSliderStepDivisions: 0
   sliderStepDivisions: 1
   trackVisuals: {fileID: 1489983247}
@@ -71664,7 +71664,7 @@ GameObject:
   - component: {fileID: 2030547941}
   - component: {fileID: 2030547940}
   m_Layer: 0
-  m_Name: CustomShapes
+  m_Name: ObjectGravity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71714,7 +71714,7 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: 20f25674b9512834f88938d45ed495d7, type: 3}
   iconQuadRenderer: {fileID: 15197407}
   iconQuadTextureNameID: _MainTex
-  iconQuadTexture: {fileID: 2800000, guid: d6a8d6d764af76740ad06383ee810941, type: 3}
+  iconQuadTexture: {fileID: 2800000, guid: b7ebc1af93ceaba48aed1e572edc6a58, type: 3}
   defaultButtonQuadMaterial: {fileID: 2100000, guid: fa419ab56051229449e3b813df8f295f, type: 2}
   iconSet: {fileID: 11400000, guid: 8b386ef895f7c924f8c4b03d1d3ed683, type: 2}
   defaultIconSet: {fileID: 11400000, guid: 8b386ef895f7c924f8c4b03d1d3ed683, type: 2}
@@ -71868,9 +71868,9 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SaveRecordedInput
+      - m_Target: {fileID: 546837676}
+        m_TargetAssemblyTypeName: creatorScript, Assembly-CSharp
+        m_MethodName: ToggleGravity
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -75060,7 +75060,7 @@ MonoBehaviour:
   snapToPosition: 1
   thumbCollider: {fileID: 1340334393}
   touchCollider: {fileID: 546195881}
-  sliderValue: 0.5
+  sliderValue: 0.2
   useSliderStepDivisions: 0
   sliderStepDivisions: 1
   trackVisuals: {fileID: 462113537}
