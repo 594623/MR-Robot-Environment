@@ -25,11 +25,16 @@ public class ROSCollisionPublisher : MonoBehaviour
         
     }
 
-    public void onCollision(Collision collision)
+    public void OnCollision(Collision collision)
     {
         OnStopSignal?.Invoke();
 
         ros.Publish(topicName, new BoolMsg(true));
+    }
+
+    public void OnSeparation(Collision collision)
+    {
+        ros.Publish(topicName, new BoolMsg(false));
 
         OnContinueSignal?.Invoke();
     }

@@ -11,6 +11,8 @@ public class CollisionDetector : MonoBehaviour
     public GameObject[] ignoredObjects;
     [Header("Event(s) when a collision is detected")]
     public UnityEvent<Collision> OnCollision;
+    [Header("Event(s) when two objects are separated after a collision")]
+    public UnityEvent<Collision> OnSeparation;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -20,5 +22,15 @@ public class CollisionDetector : MonoBehaviour
         Debug.Log("Collision detected between " + gameObject.name + " and " + collision.gameObject.name);
         // Invokes event listeners
         OnCollision?.Invoke(collision);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        // Ignores certain Game Objects
+        if (ignoredObjects.Contains(collision.gameObject)) return;
+        // Logs the separation to the console
+        Debug.Log("Separation detected between " + gameObject.name + " and " + collision.gameObject.name);
+        // Invokes event listeners
+        OnSeparation?.Invoke(collision);
     }
 }
