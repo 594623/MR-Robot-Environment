@@ -29,7 +29,7 @@ public class ROSCollisionPublisher : MonoBehaviour
     {
         OnStopSignal?.Invoke();
 
-        //ros.Publish(topicName, data);
+        ros.Publish(topicName, new Bool(true);
 
         OnContinueSignal?.Invoke();
     }
