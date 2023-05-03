@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Unity.Robotics.ROSTCPConnector;
+using RosMessageTypes.Std;
 
 public class ROSCollisionPublisher : MonoBehaviour
 {
@@ -28,8 +29,8 @@ public class ROSCollisionPublisher : MonoBehaviour
     public void onCollision(Collision collision)
     {
         OnStopSignal?.Invoke();
-
-        ros.Publish(topicName, new Bool(true);
+        // Was ros.Publish(topicName, data);
+        // ros.Publish(topicName, new Bool(true));
 
         OnContinueSignal?.Invoke();
     }

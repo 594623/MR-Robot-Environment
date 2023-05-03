@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.MixedReality.Toolkit.UI;
 using System.Diagnostics;
+using UnityEngine.XR.WSA.Input;
+using Microsoft.MixedReality.Toolkit.Input;
+
 
 public class creatorScript : MonoBehaviour
 {
@@ -10,6 +13,10 @@ public class creatorScript : MonoBehaviour
     public GameObject capsulePrefab;
     public GameObject spherePrefab;
     public GameObject cylinderPrefab;
+    public GameObject linePrefab;
+    private GameObject lineObject;
+    private LineRenderer lineRenderer;
+
 
     public PinchSlider widthSlider;
     public PinchSlider heightSlider;
@@ -39,23 +46,15 @@ public class creatorScript : MonoBehaviour
     // Commented out code for deleting objects in unity rather than the hololens
     void Update()
     {
-        /* 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                // Check if the clicked object is in the prefabList and delete it if it is
-                if (prefabList.Contains(hit.collider.gameObject))
-                {
-                    prefabList.Remove(hit.collider.gameObject);
-                    Destroy(hit.collider.gameObject);
-                }
-            }
-        }
-        */
+
+        
     }
+
+    private void OnTouchStarted(HandTrackingInputEventData eventData)
+    {
+        Destroy(gameObject);
+    }
+
     // Function for spawning a cube
     public void SpawnCube()
     {
@@ -64,9 +63,38 @@ public class creatorScript : MonoBehaviour
 
         // Add an Interactable component and set its OnClick event to OnObjectClicked
         Interactable interactable = newCube.AddComponent<Interactable>();
-        interactable.OnClick.AddListener(OnObjectClicked);
+        interactable.OnClick.AddListener(() =>
+        {
+            if (deleteMode)
+            {
+                Destroy(newCube);
+                prefabList.Remove(newCube);
+            }
+        });
+
         CheckGrav(newCube);
         prefabList.Add(newCube);
+        /* WIP for a placing mode
+         *  TogglePlaceMode();
+        if (placeMode)
+        {
+            RaycastHit hitInfo;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo))
+            {
+                GameObject newCube = Instantiate(cubePrefab, hitInfo.point, Quaternion.identity);
+
+                // Add an Interactable component and set its OnClick event to OnObjectClicked
+                Interactable interactable = newCube.AddComponent<Interactable>();
+              //  interactable.OnClick.AddListener(OnObjectClicked);
+                CheckGrav(newCube);
+                prefabList.Add(newCube);
+
+                // Update line renderer end position to the new cube's position
+                lineRenderer.SetPosition(1, newCube.transform.position);
+            }
+        
+    }
+        */
     }
     // Function for spawning a sphere
     public void SpawnSphere()
@@ -76,7 +104,14 @@ public class creatorScript : MonoBehaviour
 
         // Add an Interactable component and set its OnClick event to OnObjectClicked
         Interactable interactable = newSphere.AddComponent<Interactable>();
-        interactable.OnClick.AddListener(OnObjectClicked);
+        interactable.OnClick.AddListener(() =>
+        {
+            if (deleteMode)
+            {
+                Destroy(newSphere);
+                prefabList.Remove(newSphere);
+            }
+        });
 
         CheckGrav(newSphere);
         prefabList.Add(newSphere);
@@ -88,8 +123,16 @@ public class creatorScript : MonoBehaviour
         GameObject newCapsule = Instantiate(capsulePrefab, spawnPosition, Quaternion.identity);
 
         // Add an Interactable component and set its OnClick event to OnObjectClicked
+        // Add an Interactable component and set its OnClick event to OnObjectClicked
         Interactable interactable = newCapsule.AddComponent<Interactable>();
-        interactable.OnClick.AddListener(OnObjectClicked);
+        interactable.OnClick.AddListener(() =>
+        {
+            if (deleteMode)
+            {
+                Destroy(newCapsule);
+                prefabList.Remove(newCapsule);
+            }
+        });
 
         CheckGrav(newCapsule);
         prefabList.Add(newCapsule);
@@ -101,8 +144,16 @@ public class creatorScript : MonoBehaviour
         GameObject newCylinder = Instantiate(cylinderPrefab, spawnPosition, Quaternion.identity);
 
         // Add an Interactable component and set its OnClick event to OnObjectClicked
+        // Add an Interactable component and set its OnClick event to OnObjectClicked
         Interactable interactable = newCylinder.AddComponent<Interactable>();
-        interactable.OnClick.AddListener(OnObjectClicked);
+        interactable.OnClick.AddListener(() =>
+        {
+            if (deleteMode)
+            {
+                Destroy(newCylinder);
+                prefabList.Remove(newCylinder);
+            }
+        });
 
         CheckGrav(newCylinder);
         prefabList.Add(newCylinder);
@@ -194,26 +245,31 @@ public class creatorScript : MonoBehaviour
             }
         }
     }
-    // If deletemode is enabled the clicked object should be deleted.
-    public void OnObjectClicked()
-    {
-        if (deleteMode)
-        {
-            // Get the clicked object
-            GameObject clickedObject = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
-
-            // Remove it from the prefabList and destroy it
-            if (prefabList.Contains(clickedObject))
-            {
-                prefabList.Remove(clickedObject);
-                Destroy(clickedObject);
-            }
-        }
-    }
     // Simply toggles DeleteMode on or off
     public void ToggleDeleteMode()
     {
         deleteMode = !deleteMode;
+    }
+
+    // Simply toggles PlaceMode on or off
+    public void TogglePlaceMode()
+    {
+        placeMode = !placeMode;
+        if (placeMode)
+        {
+            lineObject = Instantiate(linePrefab, Vector3.zero, Quaternion.identity);
+            lineRenderer = lineObject.GetComponent<LineRenderer>();
+            lineRenderer.positionCount = 2;
+            lineRenderer.startWidth = 0.01f;
+            lineRenderer.endWidth = 0.01f;
+            lineRenderer.useWorldSpace = true;
+            lineRenderer.SetPosition(0, Camera.main.transform.position);
+            lineRenderer.SetPosition(1, Camera.main.transform.position + Camera.main.transform.forward * 2f);
+        }
+        else
+        {
+            Destroy(lineObject);
+        }
     }
 
 }

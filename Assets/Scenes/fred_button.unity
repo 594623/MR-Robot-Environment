@@ -3789,7 +3789,7 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1298915543}
+      - m_Target: {fileID: 546837676}
         m_TargetAssemblyTypeName: creatorScript, Assembly-CSharp
         m_MethodName: deleteAllShapes
         m_Mode: 1
@@ -18798,11 +18798,13 @@ MonoBehaviour:
   capsulePrefab: {fileID: 4202885937044528537, guid: c0a37dd07099a3541b13022dc7ed2729, type: 3}
   spherePrefab: {fileID: 5446223835746829223, guid: 1e7ba0cd10d397c4f9fbd70f93e908e6, type: 3}
   cylinderPrefab: {fileID: 6047524273625821077, guid: 58928aa34c2d35a499bed7407da749a9, type: 3}
-  spawnOffset: 0.2
+  linePrefab: {fileID: 0}
   widthSlider: {fileID: 1972696467}
   heightSlider: {fileID: 2144081458}
   lengthSlider: {fileID: 380238178}
   deleteMode: 0
+  placeMode: 0
+  spawnOffset: 0.2
 --- !u!114 &546837677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19188,7 +19190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555124283}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.167, y: 0.8, z: -2.513}
+  m_LocalPosition: {x: -0.167, y: 0.8, z: 0.006550037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37693,9 +37695,9 @@ MonoBehaviour:
   OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102900000, guid: d0cd29fb1ad218b48b814bc3e6d8ac0e, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 534694522}
+        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+        m_MethodName: SliderWidth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37705,9 +37707,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SaveRecordedInput
+      - m_Target: {fileID: 534694522}
+        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+        m_MethodName: SliderHeigth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 534694522}
+        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+        m_MethodName: SliderLength
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47750,11 +47764,13 @@ MonoBehaviour:
   capsulePrefab: {fileID: 0}
   spherePrefab: {fileID: 0}
   cylinderPrefab: {fileID: 0}
-  spawnOffset: 0.2
+  linePrefab: {fileID: 0}
   widthSlider: {fileID: 0}
   heightSlider: {fileID: 0}
   lengthSlider: {fileID: 0}
   deleteMode: 0
+  placeMode: 0
+  spawnOffset: 0.2
 --- !u!1 &1301233132
 GameObject:
   m_ObjectHideFlags: 0
