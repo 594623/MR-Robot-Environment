@@ -185,6 +185,7 @@ public class creatorScript : MonoBehaviour
             Rigidbody rb = obj.GetComponent<Rigidbody>();
             if (rb != null)
             {
+                rb.isKinematic = !rb.isKinematic;
                 rb.useGravity = !rb.useGravity;
             }
         }
@@ -234,12 +235,14 @@ public class creatorScript : MonoBehaviour
             {
                 // Get the useGravity setting of the last spawned object
                 bool useGravity = lastObjectRigidbody.useGravity;
+                bool isKinematic = lastObjectRigidbody.isKinematic;
 
                 // Set the useGravity setting of the new object
                 Rigidbody newObjectRigidbody = newObject.GetComponent<Rigidbody>();
 
                 if (newObjectRigidbody != null)
                 {
+                    newObjectRigidbody.isKinematic = isKinematic;
                     newObjectRigidbody.useGravity = useGravity;
                 }
             }

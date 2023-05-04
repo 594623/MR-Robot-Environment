@@ -13,6 +13,7 @@ public class SliderLink : MonoBehaviour
     void Start()
     {
         slider1.OnValueUpdated.AddListener(OnSlider1Updated);
+        slider2.OnValueUpdated.AddListener(OnSlider2Updated);
     }
 
     private void OnSlider1Updated(SliderEventData eventData)
@@ -21,6 +22,18 @@ public class SliderLink : MonoBehaviour
         {
             isUpdating = true;
             slider2.SliderValue = slider1.SliderValue;
+            isUpdating = false;
+        }
+    }
+    private void OnSlider2Updated(SliderEventData eventData)
+    {
+        if (!isUpdating)
+        {
+            isUpdating = true;
+            if (slider1.SliderValue > slider2.SliderValue)
+            {
+                slider2.SliderValue = slider1.SliderValue;
+            }
             isUpdating = false;
         }
     }
