@@ -7,6 +7,7 @@ using RosMessageTypes.Sensor;
 
 public class ROSJointSubscriber : MonoBehaviour
 {
+    public bool enabled = true;
     public string topicName;
     public GameObject baseObject;
     [Space]
@@ -19,10 +20,8 @@ public class ROSJointSubscriber : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!manualJointValues)
-        {
-            ROSConnection.GetOrCreateInstance().Subscribe<JointStateMsg>(topicName, JointUpdate);
-        } else if (jointValues.Length != 6)
+        ROSConnection.GetOrCreateInstance().Subscribe<JointStateMsg>(topicName, JointUpdate);
+        if (manualJointValues && jointValues.Length != 6)
         {
             Debug.LogError("There must be exactly 6 manual joint values entered");
         }
@@ -31,7 +30,7 @@ public class ROSJointSubscriber : MonoBehaviour
     void Update()
     {
         // Moves to manually chosen values if enabled
-        if (manualJointValues && jointValues.Length == 6)
+        if (enabled && manualJointValues && jointValues.Length == 6)
         {
             jointRads = new List<float>();
             for (int i = 0; i < jointValues.Length; i++)
@@ -44,12 +43,15 @@ public class ROSJointSubscriber : MonoBehaviour
 
     void JointUpdate(JointStateMsg jointData)
     {
-        List<float> positions = new List<float>();
-        for (int i = 0; i < jointData.position.Length; i++)
+        if (enabled && !manualJointValues)
         {
-            positions.Add((float) jointData.position[i]);
-        }
+            List<float> positions = new List<float>();
+            for (int i = 0; i < jointData.position.Length; i++)
+            {
+                positions.Add((float)jointData.position[i]);
+            }
 
-        baseObject.GetComponent<ArticulationBody>().SetDriveTargets(positions);
+            baseObject.GetComponent<ArticulationBody>().SetDriveTargets(positions);
+        }
     }
 }
