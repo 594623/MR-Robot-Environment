@@ -6,8 +6,8 @@ using System.Diagnostics;
 using UnityEngine.XR.WSA.Input;
 using Microsoft.MixedReality.Toolkit.Input;
 using UnityEngine.XR;
-
-
+using System.Globalization;
+using TMPro;
 
 public class creatorScript : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class creatorScript : MonoBehaviour
     public GameObject cylinderPrefab;
     public GameObject linePrefab;
     private GameObject lineObject;
-    public GameObject selectedPrefab;
+    private GameObject selectedPrefab;
     private LineRenderer lineRenderer;
 
 
@@ -27,6 +27,7 @@ public class creatorScript : MonoBehaviour
 
     public bool deleteMode = false;
     public bool placeMode = false;
+    public TextMeshPro TextMeshProObject;
 
     public float spawnOffset = 0.2f;
     private float widthScale = 1f;
@@ -233,8 +234,19 @@ public class creatorScript : MonoBehaviour
     }
     // Simply toggles DeleteMode on or off
     public void ToggleDeleteMode()
-    {
+    { 
+    
         deleteMode = !deleteMode;
+        // Show the text element and set its text
+        if (deleteMode)
+        {
+            TextMeshProObject.gameObject.SetActive(true);
+            TextMeshProObject.text = "DeleteMode active";
+        }
+        else
+        {
+            TextMeshProObject.gameObject.SetActive(false);
+        }
     }
 
     // Simply toggles PlaceMode on or off
