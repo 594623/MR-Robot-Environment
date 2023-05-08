@@ -7,7 +7,7 @@ using RosMessageTypes.Sensor;
 
 public class ROSJointSubscriber : MonoBehaviour
 {
-    public bool enabled = true;
+    public bool scriptEnabled = true;
     public string topicName;
     public GameObject baseObject;
     [Space]
@@ -30,7 +30,7 @@ public class ROSJointSubscriber : MonoBehaviour
     void Update()
     {
         // Moves to manually chosen values if enabled
-        if (enabled && manualJointValues && jointValues.Length == 6)
+        if (scriptEnabled && manualJointValues && jointValues.Length == 6)
         {
             jointRads = new List<float>();
             for (int i = 0; i < jointValues.Length; i++)
@@ -43,7 +43,7 @@ public class ROSJointSubscriber : MonoBehaviour
 
     void JointUpdate(JointStateMsg jointData)
     {
-        if (enabled && !manualJointValues)
+        if (scriptEnabled && !manualJointValues)
         {
             List<float> positions = new List<float>();
             for (int i = 0; i < jointData.position.Length; i++)
