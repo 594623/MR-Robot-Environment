@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Unity.Robotics.ROSTCPConnector;
-using RosMessageTypes.Std;
+using RosMessageTypes.Geometry;
 
 public class ROSCollisionPublisher : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class ROSCollisionPublisher : MonoBehaviour
     void Start()
     {
         ros = ROSConnection.GetOrCreateInstance();
-        ros.RegisterPublisher<BoolMsg>(topicName);
+        ros.RegisterPublisher<Vector3Msg>(topicName);
     }
 
     void Update()
@@ -29,12 +29,16 @@ public class ROSCollisionPublisher : MonoBehaviour
     {
         OnStopSignal?.Invoke();
 
-        ros.Publish(topicName, new BoolMsg(true));
+        Vector3 normal = collision.GetContact(0).normal;
+
+        Debug.Log(normal);
+
+        ros.Publish(topicName, new Vector3Msg(normal.x, normal.y, normal.z));
     }
 
     public void OnSeparation(Collision collision)
     {
-        ros.Publish(topicName, new BoolMsg(false));
+        ros.Publish(topicName, new Vector3Msg());
 
         OnContinueSignal?.Invoke();
     }
