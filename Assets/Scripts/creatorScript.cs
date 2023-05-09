@@ -11,33 +11,39 @@ using TMPro;
 
 public class creatorScript : MonoBehaviour
 {
-    public GameObject cubePrefab; // Reference to the cube prefab to be instantiated
+    // References to the various prefabs that are being used
+    public GameObject cubePrefab;
     public GameObject capsulePrefab;
     public GameObject spherePrefab;
     public GameObject cylinderPrefab;
-    public GameObject linePrefab;
-    private GameObject lineObject;
+   // public GameObject linePrefab;
+ //   private GameObject lineObject;
     private GameObject selectedPrefab;
-    private LineRenderer lineRenderer;
+  //  private LineRenderer lineRenderer;
 
-
+    // References to the sliders for scaling the objects
     public PinchSlider widthSlider;
     public PinchSlider heightSlider;
     public PinchSlider lengthSlider;
 
+    // booleans for placeing and deletemode
     public bool deleteMode = false;
     public bool placeMode = false;
+    //Reference to the text objects which says if we are in delete mode or not
     public TextMeshPro TextMeshProObject;
 
+    // Some predefined values
     public float spawnOffset = 0.2f;
     private float widthScale = 1f;
     private float heightScale = 1f;
     private float lengthScale = 1f;
-    private int objectsSpawned = 0;
-    public float spawnDelay = 1.5f; // The delay between each object spawn
-    private float lastSpawnTime = 0f; // The time of the last object spawn
+  //  private int objectsSpawned = 0;
+  //  public float spawnDelay = 1.5f; // The delay between each object spawn
+  //  private float lastSpawnTime = 0f; // The time of the last object spawn
 
+    //List with all the created gameobjects
     private List<GameObject> prefabList = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,23 +56,26 @@ public class creatorScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    // Commented out code for deleting objects in unity rather than the hololens
+    // First checks if we are in placemode or not, then some logic for checking for an airtap. If airtap is detected and the spawn delay time
+    //  is less than the time between the last spawned object it creates another object with the help of SpawnOjbect() with a reference to the selectedPrefab
     void Update()
     {
-            if (placeMode)
-            {
-                InputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+        /*
+        if (placeMode)
+        {
+            
+            InputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
-                // Check for air tap on controller
-                bool airTap = false;
-                if (rightHand.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerPressed) && triggerPressed)
-                {
-                    airTap = true;
-                }
-                else if (rightHand.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonPressed) && primaryButtonPressed)
-                {
-                    airTap = true;
-                }
+            // Check for air tap on controller
+            bool airTap = false;
+            if (rightHand.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerPressed) && triggerPressed)
+            {
+                airTap = true;
+            }
+            else if (rightHand.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonPressed) && primaryButtonPressed)
+            {
+                airTap = true;
+            }
 
             if (airTap && Time.time - lastSpawnTime > spawnDelay)
             {
@@ -78,67 +87,68 @@ public class creatorScript : MonoBehaviour
 
             // Update line renderer
             Vector3 handPosition;
-                if (rightHand.TryGetFeatureValue(CommonUsages.devicePosition, out handPosition))
-                {
-                    Vector3 lineEndPosition = handPosition + Camera.main.transform.forward * 0.5f;
-                    lineRenderer.SetPosition(0, handPosition);
-                    lineRenderer.SetPosition(1, lineEndPosition);
-                }
+            if (rightHand.TryGetFeatureValue(CommonUsages.devicePosition, out handPosition))
+            {
+                Vector3 lineEndPosition = handPosition + Camera.main.transform.forward * 0.5f;
+                lineRenderer.SetPosition(0, handPosition);
+                lineRenderer.SetPosition(1, lineEndPosition);
             }
         }
-
-
-        private void OnTouchStarted(HandTrackingInputEventData eventData)
-    {
-        Destroy(gameObject);
+            */
     }
 
-    // Function for spawning a cube
+
+    // Toggles placemode and selects cube as current prefab
     public void SpawnCube()
     {
-        TogglePlaceMode();
+        //TogglePlaceMode();
         selectedPrefab = cubePrefab;
+            SpawnObject(selectedPrefab);
     }
-    // Function for spawning a sphere
+    // Toggles placemode and selects sphere as current prefab
     public void SpawnSphere()
     {
-        TogglePlaceMode();
+        //TogglePlaceMode();
         selectedPrefab = spherePrefab;
-    }
-    // Function for spawning a capsule
+            SpawnObject(selectedPrefab);
+        }
+    // Toggles placemode and selects capsule as current prefab
     public void SpawnCapsule()
     {
-        TogglePlaceMode();
+        //TogglePlaceMode();
         selectedPrefab = capsulePrefab;
-    }
-    // Function for spawning a cylinder
+            SpawnObject(selectedPrefab);
+        }
+    // Toggles placemode and selects cylinder as current prefab
     public void SpawnCylinder()
     {
-        TogglePlaceMode();
+       // TogglePlaceMode();
         selectedPrefab = cylinderPrefab;
-    }
-
+            SpawnObject(selectedPrefab);
+        }
+    // Function for spawning the selected prefab 
     public void SpawnObject(GameObject prefab)
     {
-       
-                Vector3 spawnPosition = lineRenderer.GetPosition(1);
-                GameObject newObj = Instantiate(prefab, spawnPosition, Quaternion.identity);
+        // Sets spawnpostion at end of linerenderer
+        Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
+        // Should add scaling based on current slider values here.
+        GameObject newObj = Instantiate(prefab, spawnPosition, Quaternion.identity);
 
-                // Add an Interactable component and set its OnClick event to OnObjectClicked
-                Interactable interactable = newObj.AddComponent<Interactable>();
-                interactable.OnClick.AddListener(() =>
-                {
-                    if (deleteMode)
-                    {
-                        Destroy(newObj);
-                        prefabList.Remove(newObj);
-                    }
-                });
+        // Add an Interactable component and set its OnClick event to OnObjectClicked
+        Interactable interactable = newObj.AddComponent<Interactable>();
+        interactable.OnClick.AddListener(() =>
+        {
+            if (deleteMode)
+            {
+                Destroy(newObj);
+                prefabList.Remove(newObj);
+            }
+        });
+        // Checks if gravity should be toggeled on or off
+        CheckGrav(newObj);
+        prefabList.Add(newObj);
 
-                CheckGrav(newObj);
-                prefabList.Add(newObj);
-            
-     
+
     }
 
 
@@ -161,7 +171,7 @@ public class creatorScript : MonoBehaviour
         }
         prefabList.Clear();
     }
-
+    // Function for toggeling gravity for spawned objects also toggles Kinematic
     public void ToggleGravity()
     {
         foreach (GameObject obj in prefabList)
@@ -234,8 +244,8 @@ public class creatorScript : MonoBehaviour
     }
     // Simply toggles DeleteMode on or off
     public void ToggleDeleteMode()
-    { 
-    
+    {
+
         deleteMode = !deleteMode;
         // Show the text element and set its text
         if (deleteMode)
@@ -248,14 +258,14 @@ public class creatorScript : MonoBehaviour
             TextMeshProObject.gameObject.SetActive(false);
         }
     }
-
-    // Simply toggles PlaceMode on or off
+        /*
+    // Simply toggles PlaceMode on or off and some lineobject logic
     public void TogglePlaceMode()
     {
         placeMode = !placeMode;
         if (placeMode)
         {
-            
+
             lineObject = Instantiate(linePrefab, Vector3.zero, Quaternion.identity);
             lineRenderer = lineObject.GetComponent<LineRenderer>();
             lineRenderer.positionCount = 2;
@@ -264,12 +274,12 @@ public class creatorScript : MonoBehaviour
             lineRenderer.useWorldSpace = true;
             lineRenderer.SetPosition(0, Camera.main.transform.position);
             lineRenderer.SetPosition(1, Camera.main.transform.position + Camera.main.transform.forward * 2f);
-            
+
         }
         else
         {
             Destroy(lineObject);
         }
     }
-
+        */
 }
