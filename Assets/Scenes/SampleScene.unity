@@ -3785,6 +3785,7 @@ Transform:
   - {fileID: 1493846083}
   - {fileID: 593602178}
   - {fileID: 1605743880}
+  - {fileID: 403653283}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18479,6 +18480,50 @@ Transform:
   m_Father: {fileID: 1049070815}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &403653282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 403653283}
+  - component: {fileID: 403653284}
+  m_Layer: 0
+  m_Name: ButtonMethods
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &403653283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403653282}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 90148341}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &403653284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403653282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a230700d6f86946bb3fbf741b4c85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &407422886
 GameObject:
   m_ObjectHideFlags: 0
@@ -54565,7 +54610,19 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 087b16002c2b0b445baa3ed3beae44a9, type: 2}
   OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 403653284}
+        m_TargetAssemblyTypeName: ButtonMethods, Assembly-CSharp
+        m_MethodName: LockEnvironment
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 43680853}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Events:
   - Event:
       m_PersistentCalls:
