@@ -66,9 +66,7 @@ public class OffsetAdjuster : MonoBehaviour
         else if (offsetMode == OffsetMode.RobotDistance)
         {
             isRobotMoving = true;
-            float imageTargetOffset = 0.09f;
-            targetPos.z = sliderValue;
-            resizedPos.z = sliderValue + imageTargetOffset;
+            resizedPos.z = sliderValue;
         }
         // Offsets robot height 0 - 10 cm
         else if (offsetMode == OffsetMode.RobotHeight)
