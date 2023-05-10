@@ -34,9 +34,10 @@ public class creatorScript : MonoBehaviour
 
     // Some predefined values
     public float spawnOffset = 0.2f;
-    private float widthScale = 1f;
-    private float heightScale = 1f;
-    private float lengthScale = 1f;
+
+    public float widthScale = 0.2f;
+    public float heightScale = 0.2f;
+    public float lengthScale = 0.2f;
   //  private int objectsSpawned = 0;
   //  public float spawnDelay = 1.5f; // The delay between each object spawn
   //  private float lastSpawnTime = 0f; // The time of the last object spawn
@@ -47,7 +48,6 @@ public class creatorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         // Add listeners to the pinch sliders' OnValueUpdated events
         widthSlider.OnValueUpdated.AddListener(OnWidthSliderUpdated);
         heightSlider.OnValueUpdated.AddListener(OnHeightSliderUpdated);
@@ -129,6 +129,7 @@ public class creatorScript : MonoBehaviour
     // Function for spawning the selected prefab 
     public void SpawnObject(GameObject prefab)
     {
+        prefab.transform.localScale = new Vector3(widthScale, heightScale, lengthScale);
         // Sets spawnpostion at end of linerenderer
         Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
         // Should add scaling based on current slider values here.
@@ -188,20 +189,24 @@ public class creatorScript : MonoBehaviour
     // Functions for updating the size of the placed objects one for x,y and z respectively
     private void OnWidthSliderUpdated(SliderEventData eventData)
     {
+        UnityEngine.Debug.Log(eventData.NewValue);
         widthScale = eventData.NewValue;
-        ScalePrefabListObjects();
+
+        //ScalePrefabListObjects();
     }
 
     private void OnHeightSliderUpdated(SliderEventData eventData)
     {
         heightScale = eventData.NewValue;
-        ScalePrefabListObjects();
+
+        //ScalePrefabListObjects();
     }
 
     private void OnLengthSliderUpdated(SliderEventData eventData)
     {
         lengthScale = eventData.NewValue;
-        ScalePrefabListObjects();
+
+        //ScalePrefabListObjects();
     }
     // The function that performs the actual scaling on all the spawned objects
     private void ScalePrefabListObjects()

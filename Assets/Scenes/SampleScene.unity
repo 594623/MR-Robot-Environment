@@ -3800,17 +3800,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8230fcbc564f65140a1333f42904f1bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubePrefab: {fileID: 0}
-  capsulePrefab: {fileID: 0}
-  spherePrefab: {fileID: 0}
-  cylinderPrefab: {fileID: 0}
-  widthSlider: {fileID: 0}
-  heightSlider: {fileID: 0}
-  lengthSlider: {fileID: 0}
+  cubePrefab: {fileID: 5739358638814993415, guid: a8fb3ab1f6ec3724ba32cb8377190c80, type: 3}
+  capsulePrefab: {fileID: 4202885937044528537, guid: c0a37dd07099a3541b13022dc7ed2729, type: 3}
+  spherePrefab: {fileID: 5446223835746829223, guid: 1e7ba0cd10d397c4f9fbd70f93e908e6, type: 3}
+  cylinderPrefab: {fileID: 6047524273625821077, guid: 58928aa34c2d35a499bed7407da749a9, type: 3}
+  widthSlider: {fileID: 685581909}
+  heightSlider: {fileID: 230207631}
+  lengthSlider: {fileID: 867695924}
   deleteMode: 0
   placeMode: 0
   TextMeshProObject: {fileID: 0}
   spawnOffset: 0.2
+  widthScale: 0.2
+  heightScale: 0.2
+  lengthScale: 0.2
 --- !u!1 &91838311
 GameObject:
   m_ObjectHideFlags: 0
@@ -25051,6 +25054,9 @@ MonoBehaviour:
   placeMode: 0
   TextMeshProObject: {fileID: 1294928851}
   spawnOffset: 0.2
+  widthScale: 1
+  heightScale: 1
+  lengthScale: 1
 --- !u!114 &593602180
 MonoBehaviour:
   m_ObjectHideFlags: 0
