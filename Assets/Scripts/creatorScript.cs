@@ -35,9 +35,13 @@ public class creatorScript : MonoBehaviour
     // Some predefined values
     public float spawnOffset = 0.2f;
 
-    public float widthScale = 0.2f;
-    public float heightScale = 0.2f;
-    public float lengthScale = 0.2f;
+    public float defaultWidth = 0.2f;
+    public float defaultHeight = 0.2f;
+    public float defaultLength = 0.2f;
+
+    private float widthScale;
+    private float heightScale;
+    private float lengthScale;
   //  private int objectsSpawned = 0;
   //  public float spawnDelay = 1.5f; // The delay between each object spawn
   //  private float lastSpawnTime = 0f; // The time of the last object spawn
@@ -53,6 +57,9 @@ public class creatorScript : MonoBehaviour
         heightSlider.OnValueUpdated.AddListener(OnHeightSliderUpdated);
         lengthSlider.OnValueUpdated.AddListener(OnLengthSliderUpdated);
 
+        widthScale = defaultWidth;
+        heightScale = defaultHeight;
+        lengthScale = defaultLength;
     }
 
     // Update is called once per frame
@@ -129,6 +136,7 @@ public class creatorScript : MonoBehaviour
     // Function for spawning the selected prefab 
     public void SpawnObject(GameObject prefab)
     {
+        UnityEngine.Debug.Log(widthScale);
         prefab.transform.localScale = new Vector3(widthScale, heightScale, lengthScale);
         // Sets spawnpostion at end of linerenderer
         Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
