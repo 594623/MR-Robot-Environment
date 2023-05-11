@@ -136,7 +136,6 @@ public class creatorScript : MonoBehaviour
     // Function for spawning the selected prefab 
     public void SpawnObject(GameObject prefab)
     {
-        UnityEngine.Debug.Log(widthScale);
         prefab.transform.localScale = new Vector3(widthScale, heightScale, lengthScale);
         // Sets spawnpostion at end of linerenderer
         Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 2f;
@@ -197,7 +196,6 @@ public class creatorScript : MonoBehaviour
     // Functions for updating the size of the placed objects one for x,y and z respectively
     private void OnWidthSliderUpdated(SliderEventData eventData)
     {
-        UnityEngine.Debug.Log(eventData.NewValue);
         widthScale = eventData.NewValue;
 
         //ScalePrefabListObjects();

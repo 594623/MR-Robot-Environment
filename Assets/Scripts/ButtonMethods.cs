@@ -14,6 +14,5 @@ public class ButtonMethods : MonoBehaviour
     {
         ImageTargetBehaviour script = imageTarget.GetComponent<ImageTargetBehaviour>();
         script.enabled = !script.enabled;
-        Debug.Log(script.enabled);
     }
 }

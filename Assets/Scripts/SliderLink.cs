@@ -5,34 +5,32 @@ using Microsoft.MixedReality.Toolkit.UI;
 
 public class SliderLink : MonoBehaviour
 {
-    public PinchSlider slider1;
-    public PinchSlider slider2;
+    public PinchSlider[] sliders;
 
+    private bool isLinked = false;
     private bool isUpdating = false;
 
     void Start()
     {
-        slider1.OnValueUpdated.AddListener(OnSlider1Updated);
-        slider2.OnValueUpdated.AddListener(OnSlider2Updated);
-    }
-
-    private void OnSlider1Updated(SliderEventData eventData)
-    {
-        if (!isUpdating)
+        for (int i = 0; i < sliders.Length; i++)
         {
-            isUpdating = true;
-            slider2.SliderValue = slider1.SliderValue;
-            isUpdating = false;
+            sliders[i].OnValueUpdated.AddListener(OnSliderUpdated);
         }
     }
-    private void OnSlider2Updated(SliderEventData eventData)
+
+    public void ToggleSliderLink()
     {
-        if (!isUpdating)
+        isLinked = !isLinked;
+    }
+
+    private void OnSliderUpdated(SliderEventData eventData)
+    {
+        if (isLinked && !isUpdating)
         {
             isUpdating = true;
-            if (slider1.SliderValue > slider2.SliderValue)
+            for (int i = 0; i < sliders.Length; i++)
             {
-                slider2.SliderValue = slider1.SliderValue;
+                sliders[i].SliderValue = eventData.NewValue;
             }
             isUpdating = false;
         }
