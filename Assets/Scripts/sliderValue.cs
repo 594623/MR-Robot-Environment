@@ -5,12 +5,15 @@ using UnityEngine.UI;
 using Microsoft.MixedReality.Toolkit.UI;
 using System.Security.Cryptography;
 using TMPro;
-using System.Diagnostics;
 
-public class sliderValue : MonoBehaviour
+public class SliderValue : MonoBehaviour
 {
-    public PinchSlider PinchSliderObject;
-    public TextMeshPro TextMeshProObject;
+    public float multiplier = 1;
+    public int decimals = 2;
+    public string suffix;
+
+    private PinchSlider sliderObj;
+    private TextMeshPro textObj;
     // Update is called once per frame
     void Update()
     {
@@ -18,13 +21,26 @@ public class sliderValue : MonoBehaviour
 
     void Start()
     {
-        // Get a reference to the PinchSlider component
-        TextMeshProObject.text = PinchSliderObject.SliderValue.ToString("F1");
-        PinchSliderObject.OnValueUpdated.AddListener(OnPinchSliderValueChanged);
+        textObj = gameObject.GetComponent<TextMeshPro>();
+        sliderObj = gameObject.transform.parent.gameObject.GetComponent<PinchSlider>();
+        textObj.text = GetSliderText(sliderObj.SliderValue);
+        sliderObj.OnValueUpdated.AddListener(OnPinchSliderValueChanged);
+    }
+
+    string GetSliderText(float sliderValue)
+    {
+        decimal value = new decimal(sliderValue * multiplier);
+        string text = decimal.Round(value, decimals).ToString();
+        if (suffix.Length > 0)
+        {
+            text += " " + suffix;
+        }
+        return text;
     }
 
     void OnPinchSliderValueChanged(SliderEventData eventData)
     {
-        TextMeshProObject.text = PinchSliderObject.SliderValue.ToString("F1");
+        textObj.text = GetSliderText(sliderObj.SliderValue);
+        Debug.Log(textObj.text);
     }
 }
