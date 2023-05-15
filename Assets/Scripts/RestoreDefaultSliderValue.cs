@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.MixedReality.Toolkit.UI;
 
-public class SliderRestoreDefautl : MonoBehaviour
+public class RestoreDefaultSliderValue : MonoBehaviour
 {
     [Serializable]
     public struct DefaultSliderValue
@@ -13,27 +13,12 @@ public class SliderRestoreDefautl : MonoBehaviour
         public float value;
     }
     public DefaultSliderValue[] defaultValues;
-    public Dictionary<PinchSlider, float> myDictionary;
-    public PinchSlider tableHeight;
-    public float tableHeightDefaultValue;
-    public PinchSlider robotDistance;
-    public float robotDistanceDefaultValue;
-    public PinchSlider robotHeight;
-    public float robotHeightDefaultValue;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void RestoreDefaults()
     {
-        //tableHeight.SliderValue = tableHeightDefault;
+        for (int i = 0; i < defaultValues.Length; i++)
+        {
+            defaultValues[i].slider.SliderValue = defaultValues[i].value;
+        }
     }
 }
